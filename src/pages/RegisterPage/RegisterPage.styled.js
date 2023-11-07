@@ -20,6 +20,7 @@ export const StyledRegisterPage = styled.div`
   .input {
     width: 100%;
     height: 30px;
+    margin-top: 8px;
     margin-bottom: 14px;
     padding: 14px 24px;
     outline: 1px solid rgba(0, 0, 0, 0.3);

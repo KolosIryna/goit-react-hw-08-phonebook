@@ -2,11 +2,9 @@ import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
   padding: 20px;
-
   margin-left: auto;
   margin-right: auto;
-
-  background-color: rgb(213 220 244);
+  background: linear-gradient(rgb(191 76 77), rgb(131 138 214));
 
   .appstyled {
     display: flex;

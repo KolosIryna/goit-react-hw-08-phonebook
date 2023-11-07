@@ -1,27 +1,24 @@
 import styled from 'styled-components';
 
 export const StyledContacts = styled.div`
+  width: 360px;
+
   .item {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
-  .button {
-    min-width: 50px;
-    margin-left: 10px;
-
-    border: 1px solid grey;
-    border-radius: 4px;
-    padding: 4px;
-    font-weight: 500;
-    font-size: 16px;
-
-    background-color: white;
+  .btn_delete {
     color: black;
-  }
 
-  .button:hover,
-  .button:focus {
-    background-color: red;
-    color: white;
+    &:hover,
+    &:focus {
+      background-color: red;
+      color: white;
+    }
   }
 `;

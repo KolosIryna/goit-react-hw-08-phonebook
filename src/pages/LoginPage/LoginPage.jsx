@@ -23,7 +23,7 @@ const LoginPage = () => {
     <StyledLoginPage>
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         <label className="label">
-          <span>Email:</span>
+          <span className="title">Email:</span>
           <input
             {...register('email', { required: true })}
             type="email"
@@ -32,7 +32,7 @@ const LoginPage = () => {
           {errors.email && <span>This field is required</span>}
         </label>
         <label className="label">
-          <span>Password:</span>
+          <span className="title">Password:</span>
           <input
             {...register('password', { required: true, minLength: 7 })}
             type="password"

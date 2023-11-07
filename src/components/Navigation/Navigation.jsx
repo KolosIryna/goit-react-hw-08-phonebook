@@ -1,32 +1,27 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavLink, Outlet } from 'react-router-dom';
 import { selectAuthAuthenticated } from 'redux/auth/authSelectors';
-import { logOutThunk } from 'redux/auth/authOperations';
+import UserMenu from 'components/UserMenu/UserMenu';
 
 import { StyledNavigation, StyledNavigationLogin } from './Navigation.styled';
 
 const Header = () => {
   const authenticated = useSelector(selectAuthAuthenticated);
-  const dispatch = useDispatch();
 
-  const onLogOut = () => {
-    dispatch(logOutThunk());
-  };
   return (
     <StyledNavigation>
-      <nav>
-        <NavLink to="/" className="logo">
+      <nav className="nav">
+        <NavLink to="/login" className="logo">
           Your<span className="logo_black">Phonebook</span>
         </NavLink>
+
         {authenticated ? (
           <>
             <NavLink to="/contacts" className="header">
               Contacts
             </NavLink>
-            <button onClick={onLogOut} className="btn">
-              Log Out
-            </button>
+            <UserMenu />
           </>
         ) : (
           <>

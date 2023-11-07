@@ -8,7 +8,10 @@ import {
 } from 'redux/contacts/selectors';
 import Loader from 'components/Loader/Loader';
 
+import DeleteIcon from '@mui/icons-material/Delete';
+
 import { StyledContacts } from './Contacts.styled';
+import { IconButton } from '@mui/material';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -31,13 +34,14 @@ const Contacts = () => {
         {filteredContacts.length > 0 ? (
           filteredContacts.map(contact => (
             <li key={contact.id} className="item">
-              {contact.name}: {contact.phone}
-              <button
-                className="button"
+              {contact.name}: {contact.number}
+              <IconButton
+                className="btn_delete"
+                aria-label="delete"
                 onClick={() => handleDeleteContact(contact.id)}
               >
-                Delete
-              </button>
+                <DeleteIcon />
+              </IconButton>
             </li>
           ))
         ) : (

@@ -17,3 +17,5 @@ export const selectorContactsIsLoading = state =>
   state.contacts.contacts.isLoading;
 
 export const selectorContactsError = state => state.contacts.contacts.error;
+
+export const selectUserName = state => state.auth.user.name;

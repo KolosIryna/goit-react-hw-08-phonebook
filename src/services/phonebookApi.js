@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const phonebookInstance = axios.create({
+export const phonebookInstance = axios.create({
   baseURL: 'https://connections-api.herokuapp.com',
 });
 

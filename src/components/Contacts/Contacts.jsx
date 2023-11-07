@@ -10,7 +10,7 @@ import Loader from 'components/Loader/Loader';
 
 import css from './Contacts.module.css';
 
-export const Contacts = () => {
+const Contacts = () => {
   const dispatch = useDispatch();
 
   const isLoading = useSelector(selectorContactsIsLoading);
@@ -50,3 +50,5 @@ export const Contacts = () => {
     </div>
   );
 };
+
+export default Contacts;

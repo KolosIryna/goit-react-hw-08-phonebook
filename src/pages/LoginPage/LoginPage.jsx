@@ -1,7 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { loginThunk } from 'redux/authReducer';
+import { loginThunk } from 'redux/auth/authOperations';
+
+import { StyledLoginPage } from './LoginPage.styled';
 
 const LoginPage = () => {
   const {
@@ -18,23 +20,32 @@ const LoginPage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label>
-        <span>Email:</span>
-        <input {...register('email', { required: true })} type="email" />
-        {errors.email && <span>This field is required</span>}
-      </label>
-      <label>
-        <span>Password:</span>
-        <input
-          {...register('password', { required: true, minLength: 7 })}
-          type="password"
-        />
-        {errors.password && <span>This field is required</span>}
-      </label>
+    <StyledLoginPage>
+      <form onSubmit={handleSubmit(onSubmit)} className="form">
+        <label className="label">
+          <span>Email:</span>
+          <input
+            {...register('email', { required: true })}
+            type="email"
+            className="input"
+          />
+          {errors.email && <span>This field is required</span>}
+        </label>
+        <label className="label">
+          <span>Password:</span>
+          <input
+            {...register('password', { required: true, minLength: 7 })}
+            type="password"
+            className="input"
+          />
+          {errors.password && <span>This field is required</span>}
+        </label>
 
-      <button type="submit">Sign In</button>
-    </form>
+        <button type="submit" className="btn">
+          Sign In
+        </button>
+      </form>
+    </StyledLoginPage>
   );
 };
 

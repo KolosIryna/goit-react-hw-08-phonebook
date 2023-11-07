@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectorfilter } from 'redux/contacts/selectors';
 import { setFilter } from 'redux/contacts/sliceContacts';
 
-export const Filter = () => {
+const Filter = () => {
   const filter = useSelector(selectorfilter);
   const dispatch = useDispatch();
 
@@ -31,3 +31,5 @@ export const Filter = () => {
     </div>
   );
 };
+
+export default Filter;

@@ -4,7 +4,7 @@ import { selectorContacts } from 'redux/contacts/selectors';
 
 import css from './PhoneForm.module.css';
 
-export const PhoneForm = () => {
+const PhoneForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectorContacts);
 
@@ -29,6 +29,7 @@ export const PhoneForm = () => {
 
     dispatch(addContact(newContact));
     event.currentTarget.reset();
+    console.log(addContact, newContact);
   };
 
   return (
@@ -62,3 +63,5 @@ export const PhoneForm = () => {
     </div>
   );
 };
+
+export default PhoneForm;

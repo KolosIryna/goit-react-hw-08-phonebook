@@ -8,7 +8,7 @@ import {
 } from 'redux/contacts/selectors';
 import Loader from 'components/Loader/Loader';
 
-import css from './Contacts.module.css';
+import { StyledContacts } from './Contacts.styled';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -26,14 +26,14 @@ const Contacts = () => {
   };
 
   return (
-    <div>
+    <StyledContacts>
       <ul>
         {filteredContacts.length > 0 ? (
           filteredContacts.map(contact => (
-            <li key={contact.id} className={css.item}>
+            <li key={contact.id} className="item">
               {contact.name}: {contact.phone}
               <button
-                className={css.button}
+                className="button"
                 onClick={() => handleDeleteContact(contact.id)}
               >
                 Delete
@@ -47,7 +47,7 @@ const Contacts = () => {
 
       {isLoading && <Loader />}
       {error && <p>Oppsss Erorr</p>}
-    </div>
+    </StyledContacts>
   );
 };
 

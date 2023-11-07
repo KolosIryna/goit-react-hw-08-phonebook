@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectorContacts } from 'redux/contacts/selectors';
 
-import css from './PhoneForm.module.css';
+import { StyledPhoneForm } from './PhoneForm.styled';
 
 const PhoneForm = () => {
   const dispatch = useDispatch();
@@ -29,25 +29,24 @@ const PhoneForm = () => {
 
     dispatch(addContact(newContact));
     event.currentTarget.reset();
-    console.log(addContact, newContact);
   };
 
   return (
-    <div className={css.phoneform}>
-      <h1 className={css.text}>Phonebook</h1>
-      <form onSubmit={handleSubmit} className={css.form}>
-        <label className={css.label}>
-          <span className={css.title}>Name</span>
+    <StyledPhoneForm>
+      <h1 className="text">Phonebook</h1>
+      <form onSubmit={handleSubmit} className="form">
+        <label className="label">
+          <span className="title">Name</span>
           <input
-            className={css.input}
+            className="input"
             name="name"
             type="text"
             required
             placeholder="Enter name"
           />
-          <span className={css.title}>Number</span>
+          <span className="title">Number</span>
           <input
-            className={css.input}
+            className="input"
             type="tel"
             name="number"
             required
@@ -56,11 +55,11 @@ const PhoneForm = () => {
             maxLength="12"
           />
         </label>
-        <button className={css.btn} type="submit">
+        <button className="btn" type="submit">
           Add contact
         </button>
       </form>
-    </div>
+    </StyledPhoneForm>
   );
 };
 

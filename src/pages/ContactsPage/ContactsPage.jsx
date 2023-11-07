@@ -1,18 +1,19 @@
 import PhoneForm from 'components/PhoneForm/PhoneForm';
-import css from '../../components/App.module.css';
 import Filter from 'components/Filter/Filter';
 import Contacts from 'components/Contacts/Contacts';
 
+import { StyledContainer } from './ContactsPage.styled';
+
 const ContactsPage = () => {
   return (
-    <div className={css.container}>
-      <div className={css.appstyled}>
+    <StyledContainer>
+      <div className="appstyled">
         <PhoneForm />
-        <h2 className={css.text}>Contacts</h2>
+        <h2 className="text">Contacts</h2>
         <Filter />
         <Contacts />
       </div>
-    </div>
+    </StyledContainer>
   );
 };
 
